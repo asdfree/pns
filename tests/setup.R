@@ -9,7 +9,7 @@ pns_cat <-
 		output_dir = file.path( getwd() ) )
 
 # download the microdata to your local computer
-lodown( "pns" , pns_cat )
+
 
 options( survey.lonely.psu = "adjust" )
 
