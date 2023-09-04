@@ -221,7 +221,7 @@ glm_result <-
 	)
 
 summary( glm_result )
-total_renda <- svytotal( ~ e01602 , pns_design )
+total_renda <- svytotal( ~ e01602 , pns_design , na.rm = TRUE )
 stopifnot( round( coef( total_renda ) , 0 ) == 213227874692 )
 stopifnot( round( SE( total_renda ) , 0 ) == 3604489769 )
 library(srvyr)
