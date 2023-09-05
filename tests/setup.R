@@ -4,11 +4,7 @@
 dictionary_tf <- tempfile()
 
 dictionary_url <-
-	paste0(
-		"https://ftp.ibge.gov.br/PNS/" ,
-		"2019/Microdados/Documentacao/" ,
-		"Dicionario_e_input_20220530.zip"
-	)
+	"https://ftp.ibge.gov.br/PNS/2019/Microdados/Documentacao/Dicionario_e_input_20220530.zip"
 
 download.file( dictionary_url , dictionary_tf , mode = 'wb' )
 
@@ -29,7 +25,7 @@ sas_lines <- sas_lines[ seq( sas_start , sas_end - 1 ) ]
 sas_lines <- gsub( "\\/\\*(.*)" , "" , sas_lines )
 
 # remove tabs, multiple spaces and spaces at the end of each string
-sas_lines <- gsub( "	" , " " , sas_lines )
+sas_lines <- gsub( "\t" , " " , sas_lines )
 sas_lines <- gsub( "( +)" , " " , sas_lines )
 sas_lines <- gsub( " $" , "" , sas_lines )
 
@@ -54,11 +50,7 @@ stopifnot(
 this_tf <- tempfile()
 
 this_url <-
-	paste0(
-		"https://ftp.ibge.gov.br/PNS/" ,
-		"2019/Microdados/Dados/" ,
-		"PNS_2019_20220525.zip"
-	)
+	"https://ftp.ibge.gov.br/PNS/2019/Microdados/Dados/PNS_2019_20220525.zip"
 
 download.file( this_url , this_tf , mode = 'wb' )
 library(readr)
@@ -114,8 +106,6 @@ pns_design <-
 	update( 
 		pns_design , 
 
-		one = 1 ,
-		
 		medical_insurance = ifelse( i00102 %in% 1:2 , as.numeric( i00102 == 1 ) , NA ) ,
 		
 		uf_name =
