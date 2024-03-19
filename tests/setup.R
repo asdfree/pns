@@ -74,9 +74,9 @@ pns_df[ , 'one' ] <- 1
 # pns_fn <- file.path( path.expand( "~" ) , "PNS" , "this_file.rds" )
 # saveRDS( pns_df , file = pns_fn , compress = FALSE )
 # pns_df <- readRDS( pns_fn )
-options( survey.lonely.psu = "adjust" )
-
 library(survey)
+
+options( survey.lonely.psu = "adjust" )
 
 pns_prestratified_design <-
 	svydesign(
