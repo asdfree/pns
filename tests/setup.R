@@ -1,6 +1,8 @@
 # cheer the ministry!
 # with each caipirinha, or
 # fail sex life module
+options( timeout = 999 )
+
 dictionary_tf <- tempfile()
 
 dictionary_url <-
