@@ -101,7 +101,6 @@ pns_design <-
 		strata = ~v00283 ,
 		population = popc.types
 	)
-
 pns_design <- 
 	update( 
 		pns_design , 
